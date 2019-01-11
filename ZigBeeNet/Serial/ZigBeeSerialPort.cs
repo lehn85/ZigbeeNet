@@ -204,6 +204,7 @@ namespace ZigBeeNet.Serial
             {
                 try
                 {
+                    _serialPort.RtsEnable = true; //My CC2530 requires RTS 
                     _serialPort.Write(value, 0, value.Length);
 
                     _logger.Debug("Write data to serialport: {Data}", BitConverter.ToString(value));
